@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaMovil.Views.AboutPage"
+             xmlns:vm="clr-namespace:PruebaMovil.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">White</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40"  VerticalOptions="FillAndExpand">
+                    <Image Source="logo_uacm.png" VerticalOptions="Center" HeightRequest="250"/>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,-7,30,24" Spacing="10">
+                <Label Text="Bienvenid@ a la Universidad Autónoma de la Ciudad de México" FontSize="Title"/>
+                <Label Text="Este es un sistema para consultar si un un profesor se encuentra dentro de su cubiculo, de tal forma se podra agendar una cita para acesoria o tutoria." FontSize="16" Padding="0,0,0,0"/>
+                
+                <!--Label FontSize="16" Padding="0,24,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Learn more at "/>
+                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label-->
+
+                <Button Margin="0,0,0,0" Text="Iniciar Sesion" 
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+                
+                <Label Text="Ó" TextColor="Black" HorizontalOptions="Center"/>
+                <Button Text="Voz"
+                        Background="{StaticResource Primary}"
+                        TextColor="White"/>
+                
+                <Label Text="Registrarse" TextColor="Blue" HorizontalOptions="Center" TextDecorations="Underline"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
